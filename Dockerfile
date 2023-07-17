@@ -40,7 +40,7 @@ RUN apk --no-cache add \
         qt5-qtbase qt5-qtmultimedia-dev qt5-qttools-dev && \
 
 # Compile RcloneBrowser
-    git clone https://github.com/MikeRatcliffe/RcloneBrowser.git /tmp && \
+    git clone --depth 1 --branch rclone-1-56-output-changes https://github.com/MikeRatcliffe/RcloneBrowser.git /tmp && \
     mkdir /tmp/build && \
     cd /tmp/build && \
     cmake .. && \
