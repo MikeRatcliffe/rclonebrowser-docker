@@ -5,7 +5,7 @@
 FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 # Define build arguments
-ARG RCLONE_VERSION=current
+ARG RCLONE_VERSION=v1.63.0
 
 # Define environment variables
 ENV ARCH=amd64
@@ -26,7 +26,7 @@ RUN apk --no-cache add \
       dbus \
       xterm \
     && cd /tmp \
-    && wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
+    && wget -q http://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
     && unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
     && mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin \
     && rm -r /tmp/rclone* && \
